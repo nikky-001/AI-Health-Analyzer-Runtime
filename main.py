@@ -4,7 +4,7 @@ from src.feature_engineering import process_features
 from src.health_engine import predict_health
 from src.health_engine import display_output
 
-print("🚀 Starting AI Health Monitor...\n")
+print("🚀 Starting AI Health Monitor....\n")
 
 current_output = {
     "score": None,
