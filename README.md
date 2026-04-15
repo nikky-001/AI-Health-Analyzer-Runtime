@@ -24,6 +24,7 @@ This project is designed for easy integration into systems such as PCs, routers,
 
 ## 📦 Project Structure
 
+```
 ai-health-monitor/
 │
 ├── model/
@@ -41,7 +42,9 @@ ai-health-monitor/
 │
 ├── main.py
 ├── requirements.txt
+├── .gitignore
 └── README.md
+```
 
 ---
 
