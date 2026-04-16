@@ -1,10 +1,10 @@
 def compute_error(cpu, memory, temp):
     error = 0
-    if cpu > 85:
+    if cpu > 80:
         error += 1
-    if memory > 85:
+    if memory > 90:
         error += 1
-    if temp > 80:
+    if temp > 85:
         error += 1
     return error
 
