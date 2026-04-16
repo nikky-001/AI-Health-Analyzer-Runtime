@@ -27,7 +27,3 @@ def predict_health(features):
     category = get_category(score)
 
     return score, category
-
-
-def display_output(score, category):
-    print(f"Health Score: {score} | Status: {category}")
