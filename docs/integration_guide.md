@@ -6,7 +6,7 @@ This document explains how to integrate the health prediction model into differe
 
 ## 1. Overview
 
-The system predicts a Health Score and Category based on system metrics.
+This system provides real-time health monitoring along with predictive alerts.
 
 Output:
 
@@ -16,6 +16,7 @@ Output:
   - Above 65 → Good
   - Above 40 → Degrading
   - Below 40 → Critical
+- Alerts (if system degrades)
 
 ---
 
@@ -36,7 +37,17 @@ Output:
 
 Instead of running main.py, directly call:
 
-predict_health(features)
+from src.runtime_engine import get_system_health
+
+data = get_system_health()
+
+Output format:
+
+{
+  "score": 78,
+  "category": "Good",
+  "alert": None
+}
 
 ---
 
@@ -63,6 +74,8 @@ predict_health(features)
 
 5. Get output:
    Health Score
+   Health category
+   Alerts(if system degrades)
 
 ---
 
@@ -75,22 +88,26 @@ The system should:
 - Continuously compute health score
 - Provide latest value to UI
 - UI displays:
-  Health Score + Category
+  Health Score + Category + Alert
 
-Example:
+---
 
-Health Score: 78  
-Status: Good
+## UI Behavior
+
+* Health Score and Category should be displayed continuously
+* Alert should appear as a temporary popup notification only when present
 
 ---
 
 ## 5. Execution Flow
 
-1. Collect metrics from system  
-2. Apply feature engineering  
-3. Pass data to model  
-4. Get prediction  
-5. Display on UI  
+1. Collect metrics from system
+2. Apply feature engineering
+3. Pass data to model
+4. Get prediction (score + category)
+5. Apply trend analysis
+6. Generate alert (if required)
+7. Send output to UI  
 
 ---
 
@@ -100,3 +117,4 @@ Status: Good
 - Ensure correct feature order
 - Ensure correct units
 - Model should run continuously in background
+- Alerts should not be repeatedly triggered for same condition
