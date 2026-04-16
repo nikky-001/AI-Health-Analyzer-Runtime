@@ -1,6 +1,6 @@
 # 🖥️ AI System Health Analyzer
 
-An AI-based system that monitors system metrics and predicts a real-time **Health Score** along with a **Health Category**.
+A lightweight, deployment-ready AI system that performs real-time **health prediction**, **trend analysis**, and **alert generation** for system monitoring.
 
 This project is designed for easy integration into systems such as PCs, routers, and embedded devices.
 
@@ -8,10 +8,12 @@ This project is designed for easy integration into systems such as PCs, routers,
 
 ## 🚀 Features
 
-* Real-time system health prediction
-* ONNX-based model for cross-platform deployment
-* Supports Python and non-Python systems
-* Modular and integration-friendly design
+* Real-time health score prediction using ONNX model
+* Trend-based future prediction using recent history
+* Intelligent alert system (popup-based, non-intrusive)
+* Modular architecture for easy integration
+* Works with Python and non-Python systems
+
 
 ### Health Categories:
 
@@ -33,7 +35,9 @@ ai-health-monitor/
 ├── src/
 │   ├── collector.py
 │   ├── feature_engineering.py
-│   └── health_engine.py
+│   ├── health_engine.py
+|   ├── trend_analyzer.py
+|   └── runtime_engine.py
 │
 ├── docs/
 │   ├── input_format.md
@@ -81,7 +85,7 @@ This project supports two types of integration:
 ### ✅ Python-Based Systems
 
 * Run `main.py` for continuous monitoring
-* Or directly use the prediction function from `health_engine.py`
+* Or directly use the prediction function from `runtime_engine.py`
 
 ### 🔥 Non-Python Systems (Router / Embedded)
 
@@ -118,10 +122,10 @@ Status: Good
 
 ## 🚀 Future Enhancements
 
-* Time-series forecasting
-* Anomaly detection
-* Alert system integration
-* Advanced UI support
+* Advanced time-series forecasting
+* Enhanced anomaly detection
+* Alert severity levels
+* Extended UI integration
 
 ---
 
